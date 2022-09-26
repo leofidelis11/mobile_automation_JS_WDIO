@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 
 exports.config = {
@@ -7,8 +8,8 @@ exports.config = {
     // wdio.conf.js
 
     // ...
-    user: process.env.BROWSERSTACK_USERNAME || 'leofidelis_quw7J6',
-  key: process.env.BROWSERSTACK_ACCESS_KEY || 'dGv5WA6x6PEDZhKka5Su',
+    user: process.env.BROWSERSTACK_USER,
+    key: process.env.BROWSERSTACK_KEY,
     services: [
         ['browserstack', {
             browserstackLocal: true
