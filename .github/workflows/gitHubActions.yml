@@ -12,7 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
-        env:
+          env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: npm test wdio.conf.js --spec test/specs/appColorNote/addNote.spec.js
         - uses: actions/upload-artifact@v1
