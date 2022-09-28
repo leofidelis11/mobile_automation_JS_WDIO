@@ -33,7 +33,9 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appColorNote/add*.js'
+        './test/specs/appColorNote/add*.js',
+        './test/specs/appColorNote/del*.js'
+
     ],
     // Patterns to exclude.
     exclude: [
