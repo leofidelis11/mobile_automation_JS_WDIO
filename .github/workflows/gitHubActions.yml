@@ -12,11 +12,12 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
+          #env:
+          #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #run: npm test wdio.actions.conf.js --spec test/specs/appColorNote/addNote.spec.js
+          run: |
+            npm ci
+            npm run build --if-present
+            npm test wdio.actions.conf.js --spec test/specs/appColorNote/addNote.spec.js
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: npm test wdio.actions.conf.js --spec test/specs/appColorNote/addNote.spec.js
-       # - uses: actions/upload-artifact@v1
-       #   if: failure()
-       #   with:
-       #     name: logs
-       #     path: logs
+            CI: true

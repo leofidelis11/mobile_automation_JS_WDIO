@@ -65,10 +65,6 @@ exports.config = {
         "appium:automationName": "UIAutomator2",
         "appium:app": "bs://b2fd5d49a1b1d95831e5b91404736518a3ad9505",
         "appium:autoGrantPermissions": true,
-        browserName: 'chrome',
-        'wdio:devtoolsOptions': {
-            headless: true
-        }
     }],
     //
     // ===================
