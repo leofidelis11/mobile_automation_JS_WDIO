@@ -24,7 +24,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appColorNote/add*.js'
+        './test/specs/appApiDemos/long*.js'
+
     ],
     // Patterns to exclude.
     exclude: [
@@ -57,7 +58,7 @@ exports.config = {
         "appium:platformVersion": "11.0",
         "appium:deviceName": "pixel3",
         "appium:automationName": "UIAutomator2",
-        "appium:app": path.join(process.cwd(), "./app/android/ColorNote+Notepad.apk"),
+        "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
         "appium:autoGrantPermissions": true
     }],
     //

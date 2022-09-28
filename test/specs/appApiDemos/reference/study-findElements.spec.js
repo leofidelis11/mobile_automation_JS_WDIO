@@ -1,3 +1,7 @@
+///For these tests, the recomended is to run only one test at a time.
+//To do it, just need to add ".only" after each "it" on the code -> "it.only"
+///if you want to skip any test, you write an "x" before "it" -> "xit"
+
 describe('Elements tests', () => {
 
     it('Find element by Acessibility Id', async () => { //this is the most common way to write, with good practices
