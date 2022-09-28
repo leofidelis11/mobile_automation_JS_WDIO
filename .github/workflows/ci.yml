@@ -1,4 +1,4 @@
-name: Browsersack
+name: CI_BS
 on: [push, pull_request]
 jobs:
   build:
