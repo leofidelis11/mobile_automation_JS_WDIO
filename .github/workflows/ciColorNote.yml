@@ -1,4 +1,4 @@
-name: CI_BS
+name: CI_AppColorNote
 on: [push, pull_request]
 jobs:
   build:
@@ -16,6 +16,5 @@ jobs:
             BROWSERSTACK_USER: ${{ secrets.BS_USER}}
             BROWSERSTACK_KEY: ${{ secrets.BS_KEY}}
           run: 
-            npm test wdio.bs.conf.js --spec test/specs/appColorNote/addNote.spec.js
-            npm test wdio.bs.conf.js --spec test/specs/appColorNote/deleteNote.spec.js
+            npm test wdio.bs.conf.js --spec test/specs/appColorNote/*.spec.js
 
