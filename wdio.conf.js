@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appApiDemos/long*.js'
+        './test/specs/appApiDemos/alert*.js'
 
     ],
     // Patterns to exclude.
@@ -55,8 +55,8 @@ exports.config = {
     //
     capabilities: [{
         platformName: "Android",
-        "appium:platformVersion": "11.0",
-        "appium:deviceName": "pixel3",
+        "appium:platformVersion": "12.0",
+        "appium:deviceName": "pixel4a",
         "appium:automationName": "UIAutomator2",
         "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
         "appium:autoGrantPermissions": true

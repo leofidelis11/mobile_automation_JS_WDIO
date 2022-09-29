@@ -60,7 +60,7 @@ describe('Android native features', () => {
         await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollBackward()');
     });
 
-    it.only('change dates', async () => {
+    it('change dates', async () => {
         await driver.startActivity("io.appium.android.apis", ".view.DateWidgets1");
 
        const date = await $('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]');
@@ -76,5 +76,29 @@ describe('Android native features', () => {
 
        await expect(await date.getText()).not.toEqual(currentDate);
 
+    });
+
+    it('Changes to landscape mode', async () => {
+        await $('~Preference').click();
+
+        driver.setOrientation("LANDSCAPE");
+
+        driver.pause(3000);
+    });
+
+    it.only('Copy and paste to clipboard', async () => {
+        await $('~Preference').click();
+
+        await $('~3. Preference dependencies').click();
+
+        await $('//android.widget.CheckBox[@resource-id="android:id/checkbox"]').click();
+
+        await $('//android.widget.TextView[@text="WiFi settings"]').click();
+
+        driver.setClipboard("Valtech testing");
+
+        await $('//android.widget.EditText[@resource-id="android:id/edit"]').addValue(driver.getClipboard());
+
+        await $('//android.widget.Button[@text="OK"]').click();
     });
 });
