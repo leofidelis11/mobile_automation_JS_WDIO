@@ -33,12 +33,12 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appApiDemos/alert*.js',
-        './test/specs/appApiDemos/drag*.js',
-        './test/specs/appApiDemos/long*.js',
-        './test/specs/appApiDemos/scroll*.js',
-        './test/specs/appApiDemos/swipe*.js',
-        './test/specs/appApiDemos/wiFi*.js'
+        './test/specs/appApiDemos/*.js',
+        //'./test/specs/appApiDemos/drag*.js',
+        //'./test/specs/appApiDemos/long*.js',
+        //'./test/specs/appApiDemos/scroll*.js',
+        //'./test/specs/appApiDemos/swipe*.js',
+        //'./test/specs/appApiDemos/wiFi*.js'
     ],
     // Patterns to exclude.
     exclude: [
