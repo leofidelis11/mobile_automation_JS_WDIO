@@ -1,5 +1,3 @@
-///For these tests, the recomended is to run only one test at a time.
-//To do it, just need to add ".only" after each "it" on the code -> "it.only"
 ///if you want to skip any test, you write an "x" before "it" -> "xit"
 
 describe('Android native features', () => {
@@ -88,21 +86,5 @@ describe('Android native features', () => {
         driver.setOrientation("LANDSCAPE");
 
         driver.pause(3000);
-    });
-
-    it('Copy and paste to clipboard', async () => {
-        await $('~Preference').click();
-
-        await $('~3. Preference dependencies').click();
-
-        await $('//android.widget.CheckBox[@resource-id="android:id/checkbox"]').click();
-
-        await $('//android.widget.TextView[@text="WiFi settings"]').click();
-
-        driver.setClipboard("Valtech testing");
-
-        await $('//android.widget.EditText[@resource-id="android:id/edit"]').addValue(driver.getClipboard());
-
-        await $('//android.widget.Button[@text="OK"]').click();
     });
 });
