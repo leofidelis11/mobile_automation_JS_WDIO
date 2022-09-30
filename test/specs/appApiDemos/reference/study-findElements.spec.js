@@ -73,8 +73,7 @@ describe('Elements tests', () => {
 
         const country = await $('//*[@resource-id="io.appium.android.apis:id/edit"]');
         await country.addValue('Brazil');
-        await country.getText();
 
-        await expect(country).toEqual('Brazil');
+        await expect(country).toHaveText('Brazil');
     });
 });
