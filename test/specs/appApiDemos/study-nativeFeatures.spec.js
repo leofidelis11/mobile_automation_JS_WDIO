@@ -3,6 +3,10 @@
 ///if you want to skip any test, you write an "x" before "it" -> "xit"
 
 describe('Android native features', () => {
+    beforeEach(function () {
+        driver.startActivity("io.appium.android.apis", ".ApiDemos");
+
+      });
     it('Access an activity directly', async () => {
         await driver.startActivity("io.appium.android.apis", ".app.AlertDialogSamples");
 
@@ -86,7 +90,7 @@ describe('Android native features', () => {
         driver.pause(3000);
     });
 
-    it.only('Copy and paste to clipboard', async () => {
+    it('Copy and paste to clipboard', async () => {
         await $('~Preference').click();
 
         await $('~3. Preference dependencies').click();

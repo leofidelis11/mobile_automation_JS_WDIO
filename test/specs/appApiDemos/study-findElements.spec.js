@@ -3,7 +3,10 @@
 ///if you want to skip any test, you write an "x" before "it" -> "xit"
 
 describe('Elements tests', () => {
+    beforeEach(function () {
+        driver.startActivity("io.appium.android.apis", ".ApiDemos");
 
+      });
     it('Find element by Acessibility Id', async () => { //this is the most common way to write, with good practices
 
         //find element by acessibility id
@@ -26,7 +29,8 @@ describe('Elements tests', () => {
         await expect(className).toHaveText("API Demos");
     });
     
-    xit('Find element by xpath', async () => {     //xpath -> //tagname[@attribute="value"]
+    it('Find element by xpath', async () => {     //xpath -> //tagname[@attribute="value"]
+        await $('~App').click();
 
         await $('//android.widget.TextView[@content-desc="Alert Dialogs"]').click();
 
@@ -38,6 +42,7 @@ describe('Elements tests', () => {
     });
 
     it('Find elements by UiAutomator', async () => {
+        await $('~App').click();
         
         await $('android=new UiSelector().textContains("Alert")').click();
 
