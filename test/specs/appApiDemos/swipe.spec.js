@@ -6,16 +6,16 @@ describe('Swipe (Horizontal Scrolling) action', () => {
 
     await $('~1. Photos').click();
 
+    const firstImage = await $('//android.widget.ImageView[1]').getAttribute("focusable");
+
+    await expect(firstImage).toEqual("true");
+
     await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollToEnd(1,5)');
 
-    await $('//android.widget.ImageView').click();
+    await $('//android.widget.ImageView[1]').click();
 
-    const toastMessage = await $('/hierarchy/android.widget.Toast').getText();
+    const secImage = await $('//android.widget.ImageView[1]').getAttribute("focusable");
 
-    console.log(toastMessage);
-
-    await expect(toastMessage).toEqual('6');
-
-
+    await expect(secImage).toEqual("false");
     });
 });

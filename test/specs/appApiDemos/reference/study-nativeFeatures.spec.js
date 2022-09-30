@@ -61,7 +61,7 @@ describe('Android native features', () => {
     });
 
     it('change dates', async () => {
-        await driver.startActivity("io.appium.android.apis", ".view.DateWidgets1");
+       await driver.startActivity("io.appium.android.apis", ".view.DateWidgets1");
 
        const date = await $('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]');
        const currentDate = await date.getText();

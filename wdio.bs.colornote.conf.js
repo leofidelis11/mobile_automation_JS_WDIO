@@ -34,7 +34,6 @@ exports.config = {
     //
     specs: [
         './test/specs/appColorNote/*.js'
-
     ],
     // Patterns to exclude.
     exclude: [

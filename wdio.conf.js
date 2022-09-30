@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appApiDemos/alert*.js'
+        './test/specs/appApiDemos/swipe*.js'
 
     ],
     // Patterns to exclude.
