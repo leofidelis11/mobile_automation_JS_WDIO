@@ -65,7 +65,6 @@ describe('Elements tests', () => {
     });
 
     it('Type in a text field', async () => {
-        
         await $('~Views').click();
 
         await $('~Auto Complete').click();
@@ -74,7 +73,8 @@ describe('Elements tests', () => {
 
         const country = await $('//*[@resource-id="io.appium.android.apis:id/edit"]');
         await country.addValue('Brazil');
+        await country.getText();
 
-        await expect(country).toHaveText('Brazil');
+        await expect(country).toEqual('Brazil');
     });
 });
