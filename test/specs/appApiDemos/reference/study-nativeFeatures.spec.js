@@ -4,7 +4,8 @@ describe('Android native features', () => {
     beforeEach(function () {
         driver.startActivity("io.appium.android.apis", ".ApiDemos");
 
-      });
+    });
+    
     it('Access an activity directly', async () => {
         await driver.startActivity("io.appium.android.apis", ".app.AlertDialogSamples");
 

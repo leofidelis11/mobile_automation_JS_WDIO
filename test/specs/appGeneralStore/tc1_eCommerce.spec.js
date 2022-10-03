@@ -1,5 +1,5 @@
 describe('Test case 1', () => {
-    it('Fill form and login', async () => {
+    it('Perform login successfully', async () => {
     await $('//android.widget.EditText[@resource-id="com.androidsample.generalstore:id/nameField"]').addValue("Mickey Mouse");
 
     await $('//android.widget.TextView[@resource-id="android:id/text1"]').click();
@@ -12,7 +12,7 @@ describe('Test case 1', () => {
     
     });
 
-    it.only('Fill form without a name and get a toast message', async () => {
+    it('Perform login with a blanket name and get a toast message', async () => {
     await $('//android.widget.TextView[@resource-id="android:id/text1"]').click();
 
     await $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Australia")').click();
