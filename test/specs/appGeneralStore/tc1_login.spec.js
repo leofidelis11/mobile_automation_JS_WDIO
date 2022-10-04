@@ -1,6 +1,9 @@
 const formPage = require("../../pageObjects/appGeneralStore/form.page");
 
 describe('Test case 1', () => {
+    beforeEach(function () {
+        driver.reset();
+    });
     it('Perform complete login successfully', async () => {
     await formPage.longLogin("Bangladesh", "Maria", "Female");
     });

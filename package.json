@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@wdio/cli": "^7.24.0",
+    "accounting-js": "^1.1.1",
     "appium": "^2.0.0-beta.44",
     "dotenv": "^16.0.2"
   },

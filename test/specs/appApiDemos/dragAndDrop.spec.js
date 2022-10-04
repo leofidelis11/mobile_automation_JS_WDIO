@@ -9,7 +9,7 @@ describe('Drag and drop action', () => {
 
     await source.touchAction('longPress') + source.dragAndDrop(target);
 
-    driver.pause(1500);
+    driver.pause(2000);
     
     const dropMessage = await $('//android.widget.TextView[@resource-id="io.appium.android.apis:id/drag_result_text"]').getText();
 

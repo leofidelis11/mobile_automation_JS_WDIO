@@ -37,7 +37,6 @@ class formPage {
 
     await expect($('//android.widget.Toast[@text="Please enter your name"]')).toBeExisting();    
     }
-
 }
 
 module.exports = new formPage();
