@@ -63,7 +63,7 @@ exports.config = {
     //
     capabilities: [{
         platformName: "Android",
-        "appium:platformVersion": "9.0",
+        "appium:platformVersion": "11.0",
         "appium:deviceName": "Google Pixel 4",
         "appium:automationName": "UIAutomator2",
         "appium:app": "bs://a158c9575a17cc762874603494a09283a8c08754",
