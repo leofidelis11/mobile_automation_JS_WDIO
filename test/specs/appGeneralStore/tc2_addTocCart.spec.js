@@ -13,5 +13,11 @@ describe('Test case 2', () => {
     driver.pause(1000);
 
     await expect($('//android.widget.TextView[@text="Jordan 6 Rings"]')).toBeDisplayed();
+
+    await $('android.widget.CheckBox').click();
+
+    await $('//android.widget.TextView[@resource-id="com.androidsample.generalstore:id/termsButton"]').touchAction('longPress');
+
+    await expect($('//android.widget.TextView[@resource-id="com.androidsample.generalstore:id/alertTitle"]')).toHaveText("Terms Of Conditions");
     });
 });

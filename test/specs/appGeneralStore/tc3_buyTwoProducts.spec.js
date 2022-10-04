@@ -34,7 +34,7 @@ describe('Test case 3', () => {
 
     await expect(totalPrice).toEqual(amountValue);
 
-    driver.pause(3000)
+    driver.pause(2000)
 
     });
 });
