@@ -1,9 +1,7 @@
 const formPage = require("../../pageObjects/appGeneralStore/form.page");
 
 describe('Test case 4 - hybrid feature', () => {
-    it('Add product to cart and go to browser', async function ()  {
-        this.retries(2)
-
+    it('Add product to cart and go to browser', async () =>  {
     await formPage.shortLogin();
 
     await $$('//android.widget.TextView[@resource-id="com.androidsample.generalstore:id/productAddCart"]')[0].click();
