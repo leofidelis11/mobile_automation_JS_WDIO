@@ -1,13 +1,22 @@
+require('dotenv').config()
 const path = require('path');
 
 exports.config = {
     //
-    // ====================
-    // Runner Configuration
-    // ====================
     //
-    port: 4723,
-    //
+    ////Browserstack credentials
+    // wdio.conf.js
+
+    // ...
+    user: process.env.BROWSERSTACK_USER,
+    key: process.env.BROWSERSTACK_KEY,
+    services: [
+        ['browserstack', {
+            browserstackLocal: true
+        }]
+    ],
+    // ...
+   //
     // ==================
     // Specify Test Files
     // ==================
@@ -24,8 +33,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appGeneralStore/tc4*.js'
-
+        './test/specs/appGeneralStore/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,10 +63,10 @@ exports.config = {
     //
     capabilities: [{
         platformName: "Android",
-        "appium:platformVersion": "12.0",
-        "appium:deviceName": "pixel4a",
+        "appium:platformVersion": "11.0",
+        "appium:deviceName": "Google Pixel 4",
         "appium:automationName": "UIAutomator2",
-        "appium:app": path.join(process.cwd(), "./app/android/General-Store.apk"),
+        "appium:app": "bs://b1e26872a3697f68016d50f0cd99c1f52ac76df0",
         "appium:autoGrantPermissions": true
     }],
     //
@@ -104,19 +112,7 @@ exports.config = {
     // Default request retries count
     connectionRetryCount: 3,
     //
-    // Test runner services
-    // Services take over a specific job you don't want to take care of. They enhance
-    // your test setup with almost no effort. Unlike plugins, they don't add new
-    // commands. Instead, they hook themselves up into the test process.
-    services: [
-        ['appium', {
-            args: {
-                address: 'localhost',
-                port: 4723
-            },
-            logPath: './'
-        }]
-    ],
+   
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
