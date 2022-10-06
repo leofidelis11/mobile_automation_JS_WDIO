@@ -17,7 +17,7 @@ describe('Test case 4 - hybrid feature', () => {
     let contexts = driver.getContexts();
     driver.switchContext(contexts[1]);
 
-    await $('android.widget.EditText').click();
+    //await $('android.widget.EditText').click();
 
     await $('android.widget.EditText').addValue("Valtech"+"\n");
 
