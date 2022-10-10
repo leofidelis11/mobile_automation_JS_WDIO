@@ -1,17 +1,19 @@
+const dragDropPage = require('../../pageObjects/appApiDemos/dragAndDrop.page');
+
 describe('Drag and drop action', () => {
     it('Perform drag and drop', async () => {
-    await $('~Views').click();
+    await dragDropPage.viewsBtn.click();
 
-    await $('~Drag and Drop').click();
+    await dragDropPage.dragDropBtn.click();
     
-    const source = await $('//android.view.View[@resource-id="io.appium.android.apis:id/drag_dot_1"]');
-    const target = await $('//android.view.View[@resource-id="io.appium.android.apis:id/drag_dot_2"]');
+    const source = await dragDropPage.dot1;
+    const target = await dragDropPage.dot2;
 
     await source.touchAction('longPress') + source.dragAndDrop(target);
 
-    driver.pause(2000);
+    driver.pause(3000);
     
-    const dropMessage = await $('//android.widget.TextView[@resource-id="io.appium.android.apis:id/drag_result_text"]').getText();
+    const dropMessage = await dragDropPage.dropTxt.getText();
 
     await expect(dropMessage).toEqual('Dropped!');
     });

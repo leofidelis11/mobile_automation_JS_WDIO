@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/appGeneralStore/tc4*.js'
+        './test/specs/appApiDemos/wiFi*.js'
 
     ],
     // Patterns to exclude.
@@ -58,7 +58,7 @@ exports.config = {
         "appium:platformVersion": "12.0",
         "appium:deviceName": "pixel4a",
         "appium:automationName": "UIAutomator2",
-        "appium:app": path.join(process.cwd(), "./app/android/General-Store.apk"),
+        "appium:app": path.join(process.cwd(), "./app/android/ApiDemos-debug.apk"),
         "appium:autoGrantPermissions": true
     }],
     //

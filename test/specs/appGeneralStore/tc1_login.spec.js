@@ -1,4 +1,4 @@
-const formPage = require("../../pageObjects/appGeneralStore/form.page");
+const formPage = require("../../pageObjects/appGeneralStore/tc1.page");
 
 describe('Test case 1', () => {
     beforeEach(function () {

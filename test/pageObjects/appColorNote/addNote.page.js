@@ -12,7 +12,7 @@ class AddNotePage {
     }
 
     get textBtn() {
-        return $('//*[@text="Text"]')
+        return $('//*[@text="Text"]');
     }
 
     get txtEditing() {

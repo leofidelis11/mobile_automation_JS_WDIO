@@ -1,14 +1,16 @@
+const longPressPage = require('../../pageObjects/appApiDemos/longPress.page');
+
 describe('Long press action', () => {
     it('Perform long press action', async () => {
-        await $('~Views').click();
+        await longPressPage.viewsBtn.click();
 
-        await $('~Expandable Lists').click();
+        await longPressPage.expandableListsBtn.click();
 
-        await $('~1. Custom Adapter').click();
+        await longPressPage.customAdapterBtn.click();
         
-        await $('//android.widget.TextView[@text="People Names"]').touchAction('longPress');
+        await longPressPage.peopleNameBtn.touchAction('longPress');
 
-        await expect($('//android.widget.TextView[@text="Sample menu"]')).toHaveText("Sample menu");
+        await expect(longPressPage.sampleMenu).toHaveText("Sample menu");
 
     });
     

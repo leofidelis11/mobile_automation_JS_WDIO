@@ -1,14 +1,16 @@
+const alertPage = require('../../pageObjects/appApiDemos/alertMessage.page');
+
 describe('Alert message demonstration', () => {
     it('Perform steps to get an alert message', async () => {
-        await $('~App').click();
+        await alertPage.appBtn.click();
 
-        await $('~Alert Dialogs').click();
+        await alertPage.alertDialogsBtn.click();
 
-        await $('~List dialog').click();
+        await alertPage.listDialogBtn.click();
 
-        await $("//android.widget.TextView[@text='Command two']").click();
+        await alertPage.commandTwoBtn.click();
 
-        const alertText = await $('//android.widget.TextView[@resource-id="android:id/message"]').getText();
+        const alertText = await alertPage.alertTxt.getText();
 
         await expect(alertText).toEqual("You selected: 1 , Command two");
 

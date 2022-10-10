@@ -1,21 +1,23 @@
+const wiFiPage = require('../../pageObjects/appApiDemos/wiFiSettings.page');
+
 describe('Wi-Fi settings', () => {
 
     it('Edit Wi-Fi', async () => {
-        await $('~Preference').click();
+        await wiFiPage.preferenceBtn.click();
 
-        await $('~3. Preference dependencies').click();
+        await wiFiPage.preferenceDependenciesBtn.click();
 
-        await $('//android.widget.CheckBox[@resource-id="android:id/checkbox"]').click();
+        await wiFiPage.checkBox.click();
 
-        await $('//android.widget.TextView[@text="WiFi settings"]').click();
+        await wiFiPage.wiFiSettings.click();
 
-        await expect($('//android.widget.TextView[@resource-id="android:id/alertTitle"]')).toHaveText('WiFi settings');
+        await expect(wiFiPage.alertTxt).toHaveText('WiFi settings');
 
-        await $('//android.widget.EditText[@resource-id="android:id/edit"]').addValue('Valtech it the best');
+        await wiFiPage.wiFiName.addValue('Valtech it the best');
 
-        await $('//android.widget.Button[@text="OK"]').click();
+        await wiFiPage.okBtn.click();
 
-        await expect($('//android.widget.CheckBox[@resource-id="android:id/checkbox"]')).toBeEnabled();
+        await expect(wiFiPage.checkBox).toBeEnabled();
 
     });
     

@@ -1,36 +1,16 @@
-const formPage = require("../../pageObjects/appGeneralStore/form.page");
+const formPage = require("../../pageObjects/appGeneralStore/tc1.page");
+const hybridPage = require("../../pageObjects/appGeneralStore/tc4.page");
 
 describe('Test case 4 - hybrid feature', () => {
     it('Add product to cart and go to browser', async () =>  {
     await formPage.shortLogin();
 
-    await $$('//android.widget.TextView[@resource-id="com.androidsample.generalstore:id/productAddCart"]')[0].click();
-    
-    await $('//android.widget.ImageButton[@resource-id="com.androidsample.generalstore:id/appbar_btn_cart"]').click();
+    await hybridPage.addProductAndGoToCart();
 
-    driver.pause(1000)
+    await hybridPage.clickCompletePurchaseButton();
 
-    await $('//android.widget.Button[@resource-id="com.androidsample.generalstore:id/btnProceed"]').click();
+    await hybridPage.googleSearch();
 
-    driver.pause(5000)
-
-    let contexts = driver.getContexts();
-    driver.switchContext(contexts[1]);
-
-    //await $('android.widget.EditText').click();
-
-    await $('android.widget.EditText').addValue("Valtech"+"\n");
-
-    driver.keys('Enter');
-    
-    driver.pause(3000)
-
-    driver.back();
-
-    driver.switchContext('NATIVE_APP');
-
-    driver.pause(5000)
-
-
+    await hybridPage.goBackToApp();
     });
 });

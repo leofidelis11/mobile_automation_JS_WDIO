@@ -1,20 +1,22 @@
+const swipePage = require('../../pageObjects/appApiDemos/swipe.page');
+
 describe('Swipe (Horizontal Scrolling) action', () => {
     it('Perform swipe action', async () => {
-    await $('~Views').click();
+    await swipePage.viewsBtn.click();
     
-    await $('~Gallery').click();
+    await swipePage.galleryBtn.click();
 
-    await $('~1. Photos').click();
+    await swipePage.photosBtn.click();
 
-    const firstImage = await $('//android.widget.ImageView[1]').getAttribute("focusable");
+    const firstImage = await swipePage.firstImage.getAttribute("focusable");
 
     await expect(firstImage).toEqual("true");
 
-    await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollToEnd(1,5)');
+    await swipePage.swipeToEnd;
 
-    await $('//android.widget.ImageView[1]').click();
+    await swipePage.firstImage.click();
 
-    const secImage = await $('//android.widget.ImageView[1]').getAttribute("focusable");
+    const secImage = await swipePage.firstImage.getAttribute("focusable");
 
     await expect(secImage).toEqual("false");
     });
