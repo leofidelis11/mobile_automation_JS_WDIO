@@ -1,7 +1,12 @@
 const cartPage = require('./tc3.page');
 const productsPage = require('./tc2.page');
+const formPage = require('./tc1.page');
+
 
 class hybridPage {
+    async shortLogin(){
+        return formPage.shortLogin();
+    }
 
     get proceedBtn(){
         return $('//android.widget.Button[@resource-id="com.androidsample.generalstore:id/btnProceed"]');

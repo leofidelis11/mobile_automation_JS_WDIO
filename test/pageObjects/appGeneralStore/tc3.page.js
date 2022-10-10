@@ -1,6 +1,12 @@
 const productsPage = require('./tc2.page');
+const formPage = require('./tc1.page');
+
 
 class cartPage {
+   async shortLogin(){
+      return formPage.shortLogin();
+   }
+
    get productOne(){
       return $$('//android.widget.TextView[@resource-id="com.androidsample.generalstore:id/productAddCart"]')[0];
    }
@@ -27,6 +33,8 @@ class cartPage {
     await this.productTwo.click();
 
     await productsPage.goToCart.click();
+
+    driver.pause(2000)
  }
 
  async calculateItensPrice() {

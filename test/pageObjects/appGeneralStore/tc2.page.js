@@ -1,4 +1,10 @@
+const formPage = require('./tc1.page')
+
 class productsPage {
+
+    async shortLogin(){
+        return formPage.shortLogin();
+    }
 
     get scrollToProduct(){
         return $('android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Jordan 6 Rings")');
