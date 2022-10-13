@@ -1,0 +1,6 @@
+node_modules/
+local.log
+.vscode/
+.env
+wdio-appium.log
+driver-logs/
